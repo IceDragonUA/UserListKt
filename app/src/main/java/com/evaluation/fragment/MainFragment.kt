@@ -78,7 +78,7 @@ class MainFragment : Fragment() {
                 val adapter = activity?.let {
                     CustomListAdapter(
                         it,
-                        userList.resultList,
+                        userList.mResultList,
                         object : ICommand<Result> {
                             override fun execute(param: Result) {
                                 mPageViewModel.setResult(param)
@@ -87,7 +87,7 @@ class MainFragment : Fragment() {
                     )
                 }
                 mUserList.adapter = adapter
-                mPageViewModel.setResult(userList.resultList[0])
+                mPageViewModel.setResult(userList.mResultList[0])
             },
                 {throwable -> Log.e(TAG, "Loading Error", throwable)})
     }

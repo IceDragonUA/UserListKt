@@ -51,15 +51,15 @@ class CustomListAdapter(private val mContext: Context, private val mUserList: Ar
             itemView.setOnClickListener { clickCommand.execute(userList) }
 
             Glide.with(mContext)
-                .load(userList.picture.thumbnail)
+                .load(userList.mPicture.mThumbnail)
                 .into(thumbnailView)
 
-            val firstLastName = userList.name.title +
+            val firstLastName = userList.mName.mTitle +
                     StringUtils.DOT_STRING +
                     StringUtils.BLANK_STRING +
-                    userList.name.first +
+                    userList.mName.mFirst +
                     StringUtils.BLANK_STRING +
-                    userList.name.last
+                    userList.mName.mLast
 
             titleView.text = firstLastName
         }

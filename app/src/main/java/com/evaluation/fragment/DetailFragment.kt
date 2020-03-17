@@ -83,41 +83,41 @@ class DetailFragment : Fragment() {
 
                 activity?.let {
                     Glide.with(it)
-                        .load(result.picture.large)
+                        .load(result.mPicture.mLarge)
                         .into(mPictureView)
                 }
 
-                val firstLastName = result.name.title +
+                val firstLastName = result.mName.mTitle +
                         StringUtils.DOT_STRING +
                         StringUtils.BLANK_STRING +
-                        result.name.first +
+                        result.mName.mFirst +
                         StringUtils.BLANK_STRING +
-                        result.name.last
+                        result.mName.mLast
 
-                mGenderView.text = result.gender.toUpperCase()
+                mGenderView.text = result.mGender.toUpperCase()
                 mNameView.text = firstLastName
 
-                val address = result.location.country +
+                val address = result.mLocation.mCountry +
                         StringUtils.COMMA_STRING +
                         StringUtils.BLANK_STRING +
-                        result.location.city +
+                        result.mLocation.mCity +
                         StringUtils.COMMA_STRING +
                         StringUtils.BLANK_STRING +
-                        result.location.street.name +
+                        result.mLocation.mStreet.mName +
                         StringUtils.BLANK_STRING +
-                        result.location.street.number
+                        result.mLocation.mStreet.mNumber
 
                 mLocationView.text = address
-                mEmailView.text = result.email
-                mPhoneView.text = result.phone
+                mEmailView.text = result.mEmail
+                mPhoneView.text = result.mPhone
 
-                val birthday = result.dob.date +
+                val birthday = result.mDob.mDate +
                         StringUtils.COMMA_STRING +
                         StringUtils.BLANK_STRING +
-                        result.dob.age
+                        result.mDob.mAge
 
                 mDobView.text = birthday
-                mNatView.text = result.nat
+                mNatView.text = result.mNat
             }
         )
     }

@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RestAdapter {
 
     private val BASE_URL = "https://randomuser.me/"
-    lateinit var instance: RestApi
+    var instance: RestApi
 
     init {
         instance = Retrofit.Builder()
